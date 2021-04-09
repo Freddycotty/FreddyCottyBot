@@ -1,7 +1,29 @@
 from telegram.ext import Updater, CommandHandler
+from telegram import InlineKeyboardMarkup, InlineKeyboardButton
+
+INPUT_TEXT = 0
+
+
 
 def start(update, context):
-  update.message.reply_text('Hola, como estas?')
+  button1 = InlineKeyboardButton(
+    text = 'Sobre el autor',
+    url = 'google.com' 
+  )
+  
+  button2 = InlineKeyboardButton(
+    text = 'Twitter',
+    url = 'Twitter.com' 
+  )
+  
+  
+  update.message.reply_text(
+    text = 'Haz click en un boton',
+    reply_markup=InlineKeyboardMarkup([
+      [button1],
+      [button2]
+    ])
+  )
 
 
 if __name__ == '__main__':
