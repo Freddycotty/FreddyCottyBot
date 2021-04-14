@@ -13,5 +13,4 @@ def sample_responses(input_text):
     message_in = '{0} existe pero no tiene registros'.format(user_message)
   else:
     message_in = '{0} no existe'.format(user_message)
-  
   return message_in
